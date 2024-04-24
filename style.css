@@ -1,0 +1,487 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: #1e1e1e;
+  position: relative;
+}
+
+.menu-icon,
+.profile-icon {
+  font-size: 24px;
+}
+
+.title {
+  font-size: 1.5em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-content {
+  text-align: center;
+  margin-top: 4em;
+  font-size: 1.125rem;
+}
+
+.welcome-message p {
+  margin: 0.5em 0;
+}
+
+.add-task-button {
+  background-color: #8687e7;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5em; 
+  padding: 0.4em 0.8em; 
+  position: fixed;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  bottom: 20px; 
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 900;
+  width: 64px; 
+  height: 64px; 
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+}
+
+.nav-item {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 5px; 
+}
+
+.nav-item img {
+  margin-bottom: 4px; 
+}
+
+.nav-item.active {
+  color: white;
+}
+
+.profile-icon img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.add-task-screen {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+.body-modal-active .bottom-nav {
+  display: none; 
+}
+
+.add-task-screen {
+  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; 
+  z-index: 1000; 
+}
+
+.add-task-container {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%; 
+  max-width: 375px; 
+  box-sizing: border-box; 
+}
+
+.add-task-icon {
+  display: inline-block; 
+  margin: 0 5px; 
+  
+}
+
+.add-task-icon img {
+  width: 24px; 
+  height: auto;
+}
+
+.add-task-container h2 {
+  color: white;
+  font-size: 17px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.add-task-container input {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 80%; 
+  max-width: 400px; 
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.task-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-icons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+  margin-left: 15px;
+}
+
+.save-task-button {
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+
+#saveTaskButton img {
+  display: block;
+  width: 32px;
+  height: auto;
+}
+
+.add-task-icon img {
+  width: 24px;
+  height: auto;
+}
+
+.task-priority-screen {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.task-priority-container {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 300px;
+}
+
+.priority-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.priority-option {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  width: 64px; 
+  height: 64px; 
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0; 
+}
+
+.priority-option img {
+  width: 24px; 
+  margin-bottom: 5px; 
+}
+
+.priority-option span {
+  display: block; 
+  font-size: 16px; 
+}
+
+.priority-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.priority-actions button {
+  justify-content: center;
+  background-color: #5603ad;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.priority-option:hover,
+.priority-option.selected {
+  background-color: #7d52d9; 
+  color: white; 
+}
+
+.task-list-container {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  background-color: #262626;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-list li button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.category-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.category-screen span{
+  color: #121212;
+  
+}
+
+.category-container {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  color: white; 
+}
+
+.category-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.category-option[data-name="grocery"] {
+  background-color: #f5428d; 
+}
+
+.category-option[data-name="work"] {
+  background-color: #4287f5; 
+}
+
+.category-option[data-name="sport"] {
+  background-color: #42f548; 
+}
+
+.category-option[data-name="Design"] {
+  background-color: #80FFD9; 
+}
+
+.category-option[data-name="University"] {
+  background-color: #809CFF; 
+}
+
+.category-option[data-name="Social"] {
+  background-color: #FF80EB; 
+}
+
+.category-option[data-name="Music"] {
+  background-color: #FC80FF; 
+}
+
+.category-option[data-name="Health"] {
+  background-color: #80FFA3; 
+}
+
+.category-option[data-name="Movie"] {
+  background-color: #80D1FF; 
+}
+
+.category-option[data-name="Home"] {
+  background-color: #FFCC80; 
+}
+
+
+
+
+.add-category-form {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  margin-top: 20px; 
+}
+
+.add-category-form input[type="text"],
+.add-category-form input[type="color"] {
+  padding: 8px;
+  border: none;
+  border-radius: 5px; 
+  background-color: #555; 
+}
+
+.add-category-form button {
+  padding: 10px 20px;
+  background-color: #5603ad; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+.add-category-form button:hover {
+  background-color: #6a30e0; 
+}
+
+.category-actions button {
+  padding: 8px 16px;
+  margin-top: 10px; 
+  background-color: #262626; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category-actions button:hover {
+  background-color: #3a3a3a; 
+}
+
+.category-options {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(64px, 1fr)
+  ); 
+  gap: 10px; 
+  padding: 10px; 
+}
+
+.color-picker {
+  display: flex;
+  margin: 10px 0;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-option:hover,
+.color-option.selected {
+  border-color: #fff;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.mark-today,
+.mark-complete {
+  background-color: #4caf50; 
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+  font-size: 15px;
+}
+
+.mark-complete.completed {
+  background-color: #6a30e0; 
+}
+
+.mark-complete.completed img {
+  content: url("/img/simbolo-verificado.png"); 
+}
+
+.mark-complete img {
+  margin-right: 0px;
+}
+

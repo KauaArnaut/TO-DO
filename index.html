@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App - Index</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-icon">☰</div>
+        <div class="title">Index</div>
+        <div class="profile-icon"><img src="/img/kaua.jpeg" alt="Profile"></div>
+    </header>
+
+    <main class="main-content">
+        <div class="welcome-message" id="welcomeMessage">
+            <img src="/img/Checklist-rafiki 1.png" alt="checklist" class="content-image">
+            <p>What do you want to do today?</p>
+            <p>Tap + to add your tasks</p>
+        </div>
+
+        <button id="addTaskButton" class="add-task-button">+</button>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <div class="nav-icon">
+                <img src="/img/home-2.png" alt="Home Icon">
+            </div>
+            <span>Index</span>
+        </a>
+        <a href="#" class="nav-item active">
+            <div class="nav-icon">
+                <img src="/img/calendar.png" alt="Calendar Icon">
+            </div>
+            <span>Calendario</span>
+        </a>
+        <a href="#" class="nav-item active">
+            <div class="nav-icon">
+                <img src="/img/clock.png" alt="Focuse Icon">
+            </div>
+            <span>Focuse</span>
+        </a>
+        <a href="#" class="nav-item active">
+            <div class="nav-icon">
+                <img src="/img/user.png" alt="User Icon">
+            </div>
+            <span>User</span>
+        </a>
+    </nav>
+
+    <!-- Seção de adicionar tarefas, inicialmente escondida -->
+    <div id="addTaskScreen" class="add-task-screen" style="display: none;">
+        <div class="add-task-container">
+            <h2>Add Task</h2>
+            <input type="text" id="taskName" placeholder="Task Name" />
+            <input type="text" id="taskDescription" placeholder="Description" />
+            <div class="task-details">
+                <div class="task-icons">
+                    <a href="#" class="add-task-icon active">
+                        <img src="/img/timer.png" alt="timer">
+                    </a>
+                    <a href="#" class="add-task-icon active">
+                        <img src="/img/tag.png" alt="tag">
+                    </a>
+                    <a href="#" class="add-task-icon active">
+                        <img src="/img/flag.png" alt="flag">
+                    </a>
+                </div>
+                <button id="saveTaskButton" class="save-task-button">
+                    <img src="/img/send.png" alt="Send">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskPriorityScreen" class="task-priority-screen" style="display: none;">
+        <div class="task-priority-container">
+            <h2>Task Priority</h2>
+            <div class="priority-options">
+                <!-- Substitua # por funções ou remova o href se não for necessário -->
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>1</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>2</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>3</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>4</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>5</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>6</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>7</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>8</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>9</span>
+                </button>
+                <button class="priority-option">
+                    <img src="/img/flag.png" alt="Flag">
+                    <span>10</span>
+                </button>
+            </div>
+            <div class="priority-actions">
+                <button id="cancelPriorityButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-list-container">
+        <ul id="taskList" class="task-list">
+        </ul>
+    </div>
+
+    <div id="categoryScreen" class="category-screen" style="display: none;">
+        <div class="category-container">
+            <h2>Task Categories</h2>
+            <div class="category-options">
+                <!-- Default categories -->
+                <button class="category-option" data-name="grocery">
+                    <img src="/img/bread 1.png" alt="Grocery">
+                    <span>Grocery</span>
+                </button>
+                <button class="category-option" data-name="work">
+                    <img src="/img/briefcase 1.png" alt="Work">
+                    <span>Work</span>
+                </button>
+                <button class="category-option" data-name="sport">
+                    <img src="/img/sport 1.png" alt="Sport">
+                    <span>Sport</span>
+                </button>
+                <button class="category-option" data-name="Design">
+                    <img src="/img/design (1) 1.png" alt="Design">
+                    <span>Design</span>
+                </button>
+                <button class="category-option" data-name="University">
+                    <img src="/img/Vector.png" alt="University">
+                    <span>University</span>
+                </button>
+                <button class="category-option" data-name="Social">
+                    <img src="/img/megaphone 1.png" alt="Social">
+                    <span>Social</span>
+                </button>
+                <button class="category-option" data-name="Music">
+                    <img src="/img/music (1) 1.png" alt="Music">
+                    <span>Music</span>
+                </button>
+                <button class="category-option" data-name="Health">
+                    <img src="/img/heartbeat 1.png" alt="Health">
+                    <span>Health</span>
+                </button>
+                <button class="category-option" data-name="Movie">
+                    <img src="/img/video-camera 1.png" alt="Movie">
+                    <span>Movie</span>
+                </button>
+                <button class="category-option" data-name="Home">
+                    <img src="/img/home (2) 1.png" alt="Home">
+                    <span>Home</span>
+                </button>
+
+            </div>
+            <div class="add-category-form">
+                <input type="text" id="newCategoryName" placeholder="New Category Name" />
+                <div class="color-picker">
+                    <span class="color-option" style="background-color: red;" data-color="red"></span>
+                    <span class="color-option" style="background-color: blue;" data-color="blue"></span>
+                    <span class="color-option" style="background-color: green;" data-color="green"></span>
+                    <span class="color-option" style="background-color: black;" data-color="black"></span>
+                    <span class="color-option" style="background-color: purple;" data-color="purple"></span>
+                    <span class="color-option" style="background-color: orangered;" data-color="orangered"></span>
+                    <span class="color-option" style="background-color: brown;" data-color="brown"></span>
+
+                </div>
+                <button id="addCategoryButton" data-color="red">Add Category</button>
+            </div>
+            <div class="category-actions">
+                <button id="closeCategoryScreen">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
